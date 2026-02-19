@@ -20,4 +20,9 @@
     <ProjectReference Include="..\ResenhaFc.Infrastructure\ResenhaFc.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features/Groups/" />
+    <Folder Include="Features/Groups/Create/" />
+  </ItemGroup>
+
 </Project>

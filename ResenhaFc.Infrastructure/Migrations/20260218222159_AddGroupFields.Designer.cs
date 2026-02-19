@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ResenhaFc.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using ResenhaFc.Infrastructure.Data;
 namespace ResenhaFc.Infrastructure.Migrations
 {
     [DbContext(typeof(ResenhaDbContext))]
-    partial class ResenhaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260218222159_AddGroupFields")]
+    partial class AddGroupFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,18 +110,12 @@ namespace ResenhaFc.Infrastructure.Migrations
                     b.Property<int>("PlayerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MemberType")
-                        .HasColumnType("int");
-
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
                     b.Property<decimal>("ScoreAvg")
                         .HasPrecision(10, 2)
                         .HasColumnType("decimal(10,2)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
 
                     b.HasKey("GroupId", "PlayerId");
 
